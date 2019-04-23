@@ -1,0 +1,43 @@
+
+
+.btn {
+    cursor: pointer;
+}
+
+body { /*글자색*/
+    color: #34495e;
+    background-color: #2c3e50;
+}
+
+.clicked {
+    color: #7f8c8d;
+}
+
+.form,
+.greetings {
+    display: none;
+}
+
+.showing {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+.bgImage {
+    position : absolute;
+    top:0;
+    left: 0;
+    width: contains;
+    height: contains;
+    /* background-size: 10% 10%; */
+
+    z-index: -1;
+    animation: fadeIn 0.5s linear;
+}
