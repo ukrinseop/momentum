@@ -2,12 +2,12 @@
 
 
 
-const toDoForm = document.querySelector(".js-toDoForm");
-const toDoInput = toDoForm.querySelector("input");
-const toDoList = document.querySelector(".js-doDoList");
+const toDoForm = document.querySelector(".js-toDoForm"); // <form> 안에 input들어있음
+const toDoInput = toDoForm.querySelector("input"); // <input write a to do> 부분
+const toDoList = document.querySelector(".js-doDoList"); // <ul>들어있음
 
 
-const TODOS_LS = 'toDos';
+const TODOS_LS = 'toDos'; // chrome Application의 Key 이름 (LS는 LocalStorage의 약자인듯)
 
 let toDos = []; //비어있는 array로 만듦
 // 해야할 일을 생성했으면 그게 이 'toDos' array에 추가되도록
@@ -81,10 +81,15 @@ function handleSubmit(event) {
 }
 
 function loadToDos() {
-    const loadedToDos = localStorage.getItem(TODOS_LS);
-    if(loadedToDos !== null) {
+    const loadedToDos = localStorage.getItem(TODOS_LS); // TODOS_LS는 key값 'toDos'
+
+    if(loadedToDos !== null) { // toDos에 item이 null이 아니라면
         // console.log(loadedToDos); // JSON.parse 하기 전 : 단순히 문자의 나열?로만 나오고
-        const parsedToDos = JSON.parse(loadedToDos);
+
+
+        const parsedToDos = JSON.parse(loadedToDos); // item을 Object로 변환해라.
+
+
         // console.log(parsedToDos); // JSON.parse 한 후 : object로 변환되어 뭔가를 할 수 있음
 // JSON : JavaScript Object Notation : 데이터를 전달할 때, 자바스크립트가 그걸 다룰 수 있도록 object로 바꿔주는 기능, 또는 string을 object로 바꿔주기도 함
         // parsedToDos.forEach(function(toDo) {
